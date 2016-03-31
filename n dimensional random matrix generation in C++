@@ -35,7 +35,7 @@ int main() {
 
 				else
 				
-					cMatrix[i][j] = rand() % 10 + 1; 
+					cMatrix[i][j] = rand() % 11;   // nums generated between 0 - 10 
 
 		    	}
 	  }
