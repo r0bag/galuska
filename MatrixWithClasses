@@ -1,0 +1,76 @@
+
+// Example program
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+class MatrixOP {
+    
+    public:
+        void getDim (){
+            
+            cout<< "Give me the number of nodes: " << endl;
+            cin >> dim;            
+            }
+        
+        void genMatrix (){
+            int i, j;
+            int nrow = dim;
+            int ncol = dim;
+            int gMatrix[nrow][ncol];
+                        
+            for (i=0; i < nrow; i++)
+                {
+                    for (j=0; j < ncol; j++)
+                    	{
+                    	    if (i==j)
+                    	    	{
+                    	    	    gMatrix[i][j] = 0;
+                    	    	    }
+                    	    else
+                    	    
+                    	    gMatrix[i][j] = rand() % 11;   // nums generated between 0 - 10
+                    	    }
+            	  }
+        }
+        
+        
+        void printMatrix (){
+            int nrow = dim;
+            int ncol = dim;
+            int gMatrix[nrow][ncol];
+            
+            cout<< "The generated matrix looks like this:" << endl;
+            
+            for (int i=0; i < nrow; i++)
+            		{
+            		    for (int j=0; j<ncol; j++)
+            		    	{
+            		    	    cout << gMatrix [i][j] << " " ;
+            		    	    }
+            		    cout<<endl;
+            			}
+            
+            }
+    
+    
+    private:
+    
+           int dim;
+          
+    
+    };
+
+
+
+int main()
+{
+    MatrixOP cMatrix;
+    cMatrix.getDim();
+    cMatrix.genMatrix();
+    cMatrix.printMatrix();
+ 
+return 0;
+}
