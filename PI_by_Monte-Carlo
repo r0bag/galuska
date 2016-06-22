@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include <math.h>
+
+using namespace std;
+
+int main() {
+	int i,iter,circle;
+	double axisY, axisX, loc, est_PI;
+
+	cout << "Give me the number of iterations:" << endl;
+	cin >> iter;
+
+	srand (static_cast <unsigned> (time(0)));
+
+	circle = 0;
+
+	for (i=0; i<iter;i++)
+	{
+		axisX=static_cast <double> (rand()) / static_cast <double> (RAND_MAX);
+		axisY=static_cast <double> (rand()) / static_cast <double> (RAND_MAX);
+		if (sqrtf(axisX*axisX + axisY*axisY) <= 1) circle++ ;
+	}
+
+	cout << "In the circle are " << circle << " points"<< endl;
+	cout << "The number of iterations is:" << iter << endl;
+
+	est_PI = circle/static_cast <double>(iter) * 4;
+
+	cout << "The estimated value of PI is :" << est_PI << endl;
+
+	return 0;
+}
